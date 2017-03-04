@@ -1,8 +1,9 @@
 function lineFeed
 {
-	var aTags=document.getElementByName("menu").nextSbiling.getElementsByTagName("a");
+	var menuTag=document.getElementsByName("menu");
+	aTags = menuTag[0].nextSbiling.getElementsByTagName("a");
 	for (var i=0; i < aTags.length; i++)
 		{
-			aTages[i].innerHTML += "<br>";
+			aTags[i].innerHTML += "<br>";
 		}
 }
