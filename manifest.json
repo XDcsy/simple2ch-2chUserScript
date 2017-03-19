@@ -11,8 +11,12 @@
   },
   "content_scripts": [
     {
-      "matches": ["http://*.2ch.net/*", "https://*.2ch.net/*", "http://*.2ch.sc/*", "https://*.2ch.sc/*"],
+      "matches": ["http://*.2ch.net/*/", "https://*.2ch.net/*/", "http://*.2ch.sc/*/", "https://*.2ch.sc/*/"],
       "js": ["line-feed.js"]
+    },
+    {
+      "matches": ["http://*.2ch.net/*/subback.html", "https://*.2ch.net/*/subback.html", "http://*.2ch.sc/*/subback.html", "https://*.2ch.sc/*/subback.html"],
+      "js": ["all-thread-line-feed.js"]
     }
   ]
 }
