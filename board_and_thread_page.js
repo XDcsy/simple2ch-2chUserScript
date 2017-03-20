@@ -37,28 +37,29 @@ function isNotTag(tag)
 }
 
 //取消外部url跳转确认
+//2ch不同板块跳转url的格式也略有区别，有的板块http://jump.2ch.net/?后不接http://，有的板块后接。因此需分两种情况处理。
 var hasThreadPage = 1;
 var dlTags = document.getElementsByClassName("thread");  //在板块主页定位到串的部分
 if (dlTags.length != 0)
 {
-    var urlExp = new RegExp("http:\/\/jump.2ch.net/[?]|https:\/\/jump.2ch.net/[?]");  //这里用\?会出错
+    var urlExp = new RegExp("http:\/\/jump.2ch.net/[?]|https:\/\/jump.2ch.net/[?]");  //这里用\?会出错，匹配不到问号
     var httpExp = new RegExp(".*[?]http.*");
     for (var i=0; i < dlTags.length; i++)
     {
-    	var threadaTags = dlTags[i].getElementsByTagName("a");
+        var threadaTags = dlTags[i].getElementsByTagName("a");
         for (var j=0; j < threadaTags.length; j++)
         {
             if (urlExp.test(threadaTags[j].href))  //是一个跳转的url
-	        {
-	        	if (!httpExp.test(threadaTags[j].href))  //如果这个url没有包含http://，则加上http://，删去跳转的代码
-	        	{
-	        		threadaTags[j].href = ("http://" + threadaTags[j].href.replace(urlExp,""));
-	        	}
-	        	else  //如果包含了http://或https://，保持原样，删去跳转的代码
-	        	{
-	        		threadaTags[j].href = (threadaTags[j].href.replace(urlExp,""));
-	        	}
-        	}
+            {
+                if (!httpExp.test(threadaTags[j].href))  //如果这个url没有包含http://，则加上http://，删去跳转的代码
+                {
+                    threadaTags[j].href = ("http://" + threadaTags[j].href.replace(urlExp,""));
+                }
+                else  //如果包含了http://或https://，这部分保持原样，删去跳转的代码
+                {
+                    threadaTags[j].href = (threadaTags[j].href.replace(urlExp,""));
+                }
+            }
         }
     }
 }
