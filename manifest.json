@@ -3,7 +3,7 @@
 
   "name": "simple2ch",
   "description": "Making the webpage version of 2ch a little bit easy to use.",
-  "version": "1.0",
+  "version": "0.1",
 
   "browser_action": {
     "default_icon": "icon.png",
@@ -11,16 +11,12 @@
   },
   "content_scripts": [
     {
-      "matches": ["http://*.2ch.net/*/", "https://*.2ch.net/*/"],
-      "js": ["board_page.js"]
+      "matches": ["http://*.2ch.net/*", "https://*.2ch.net/*"],
+      "js": ["board_and_thread_page.js"]
     },
     {
       "matches": ["http://*.2ch.net/*/subback.html", "https://*.2ch.net/*/subback.html"],
       "js": ["thread_list_page.js"]
-    },
-	{
-      "matches": ["http://*.2ch.net/test/read.cgi/*", "https://*.2ch.net/test/read.cgi/*"],
-      "js": ["thread_page.js"]
     }
   ]
 }
