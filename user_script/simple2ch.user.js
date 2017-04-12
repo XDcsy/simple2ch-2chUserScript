@@ -19,7 +19,6 @@
         }
         catch(e1)
         {
-            alert("wow");
             return 1;
         }
         return 0;
