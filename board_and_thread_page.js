@@ -1,6 +1,22 @@
 //换行功能
 var isBoardPage = 1;
 var menuNamedTag = document.getElementsByName("menu");  //用来定位
+
+
+function isNotTag(tag)
+{
+    try
+    {
+        var tname = tag.tagName;
+    }
+    catch(e1)
+    {
+        return 1;
+    }
+    return 0;
+}
+
+
 if (menuNamedTag.length != 0)
 {
     var tableTag = menuNamedTag[0].nextSibling;  //目前发现2ch有两种html。对于其中一种，menuNamedTag后的一个节点就是table标签。对另一种，nextSibling会获得一个换行符
@@ -23,19 +39,6 @@ if (menuNamedTag.length != 0)
     }
 }
 
-function isNotTag(tag)
-{
-    try
-    {
-        name = tag.tagName;
-    }
-    catch(e1)
-    {
-        return 1;
-    }
-    return 0;
-}
-
 //取消外部url跳转确认
 //2ch不同板块跳转url的格式也略有区别，有的板块http://jump.2ch.net/?后不接http://，有的板块后接。因此需分两种情况处理。
 var hasThreadPage = 1;
@@ -44,9 +47,9 @@ if (dlTags.length != 0)
 {
     var urlExp = new RegExp("http:\/\/jump.2ch.net/[?]|https:\/\/jump.2ch.net/[?]");  //这里用\?会出错，匹配不到问号
     var httpExp = new RegExp(".*[?]http.*");
-    for (var i=0; i < dlTags.length; i++)
+    for (var k=0; k < dlTags.length; k++)
     {
-        var threadaTags = dlTags[i].getElementsByTagName("a");
+        var threadaTags = dlTags[k].getElementsByTagName("a");
         for (var j=0; j < threadaTags.length; j++)
         {
             if (urlExp.test(threadaTags[j].href))  //是一个跳转的url
