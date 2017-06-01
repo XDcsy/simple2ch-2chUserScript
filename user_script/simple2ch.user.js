@@ -1,10 +1,11 @@
 // ==UserScript==
 // @name         simple2ch
 // @namespace    https://github.com/neEverett/simple2ch-2chChromeExtension
-// @version      0.2
+// @version      0.2.1
 // @description  Making the webpage version of 2ch a little bit easy to use.
 // @author       neEverett
 // @match        http://*.2ch.net/*
+// @match        http://*.bbspink.com/*/subback.html
 // @grant        none
 // ==/UserScript==
 
