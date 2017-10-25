@@ -6,6 +6,6 @@
 3. Removes the comfirmation step when jumping to external urls form 2ch.<br>
 
 ### How to use
-(Recommended) To use this user script, firstly install an userscript manager like [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=en). After installing it, add the `/user_script/simple2ch.user.js` to the manager and turn it on.
++ (Recommended) Firstly install an userscript manager like [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=en). After installing, add the `/user_script/simple2ch.user.js` to the manager and turn it on.
 
-(Not recommended) It also has a Chorme extension version. Download the `\extension` folder and load it under the developer mode of Chrome.
++ Chorme extension version: download the `\extension` folder and load it (under the developer mode).
